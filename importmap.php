@@ -10,49 +10,21 @@
  *     be used as an "entrypoint" (and passed to the importmap() Twig function).
  *
  * The "importmap:require" command can be used to add new entries to this file.
+ *
+ * @return array<string, array{    // Import name as key, description of the imported file as value
+ *     path: string,               // Logical, relative or absolute path to the file
+ *     type?: 'js'|'css'|'json',   // Type of the file, defaults to 'js'
+ *     entrypoint?: bool,          // Whether the file is an entrypoint, for 'js' only
+ * }|array{
+ *     version: string,            // Version of the remote package
+ *     package_specifier?: string, // Remote "package-name/path" specifier, defaults to the import name
+ *     type?: 'js'|'css'|'json',
+ *     entrypoint?: bool,
+ * }>
  */
 return [
-    'app' => [
-        'path' => './assets/app.js',
-        'entrypoint' => true,
-    ],
-    '@hotwired/stimulus' => [
-        'version' => '3.2.2',
-    ],
-    '@symfony/stimulus-bundle' => [
-        'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
-    ],
-    '@hotwired/turbo' => [
-        'version' => '7.3.0',
-    ],
-    'daisyui' => [
-        'version' => '4.12.24',
-    ],
-    'postcss-js' => [
-        'version' => '4.0.1',
-    ],
-    'picocolors' => [
-        'version' => '1.1.1',
-    ],
-    'css-selector-tokenizer' => [
-        'version' => '0.8.0',
-    ],
-    'culori/require' => [
-        'version' => '3.3.0',
-    ],
-    'camelcase-css' => [
-        'version' => '2.0.1',
-    ],
-    'postcss' => [
-        'version' => '8.4.21',
-    ],
-    'fastparse' => [
-        'version' => '1.1.2',
-    ],
-    'cssesc' => [
-        'version' => '3.0.0',
-    ],
-    'nanoid/non-secure' => [
-        'version' => '3.3.4',
-    ],
+    'app' => ['path' => './assets/app.js', 'entrypoint' => true],
+    '@hotwired/stimulus' => ['version' => '3.2.2'],
+    '@symfony/stimulus-bundle' => ['path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js'],
+    '@hotwired/turbo' => ['version' => '7.3.0'],
 ];

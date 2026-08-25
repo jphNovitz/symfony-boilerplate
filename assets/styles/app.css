@@ -1,7 +1,8 @@
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "../../tailwind_plugins/daisyui" {
+    themes: light --default, dark --prefersdark, cupcake;
+}
+@source "../../templates/";
 
 @layer base {
     /* Reset de base pour une meilleure cohérence */
